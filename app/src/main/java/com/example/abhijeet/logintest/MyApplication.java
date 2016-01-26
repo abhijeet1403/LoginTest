@@ -1,6 +1,7 @@
 package com.example.abhijeet.logintest;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
@@ -14,12 +15,24 @@ import java.security.NoSuchAlgorithmException;
  * Created by abhij on 24-01-2016.
  */
 public class MyApplication extends Application {
-    @Override
+    public static MyApplication sInstance;
+
     public void onCreate() {
         super.onCreate();
-        printHashKey();
+        sInstance = this;
+
+
     }
-    public void printHashKey(){
+
+    public static MyApplication getsInstance() {
+        return sInstance;
+    }
+
+    public static Context getAppContext() {
+        return sInstance.getApplicationContext();
+    }
+}
+   /* public void printHashKey(){
 
         // Add code to print out the key hash
         try {
@@ -36,6 +49,6 @@ public class MyApplication extends Application {
         } catch (NoSuchAlgorithmException e) {
 
         }
-    }
+    }*/
 
-}
+

@@ -1,6 +1,7 @@
 package com.example.abhijeet.logintest;
 
 import android.content.Intent;
+
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -18,23 +18,29 @@ import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.login.widget.ProfilePictureView;
 
-/**
- * A placeholder fragment containing a simple view.
- */
+
 public class MainFragment extends Fragment {
     public TextView mTextDetails;
     private AccessTokenTracker mTockenTracker;
     private ProfileTracker mProfileTracker;
     private CallbackManager mCallbackManager;
 
+    public String id;
+    public ProfilePictureView profilePictureView;
     private FacebookCallback<LoginResult> mCallBack = new FacebookCallback<LoginResult>() {
         @Override
         public void onSuccess(LoginResult loginResult) {
-           AccessToken accessToken=loginResult.getAccessToken();
+            AccessToken accessToken=loginResult.getAccessToken();
             Profile profile=Profile.getCurrentProfile();
+            Log.d("Access Token",""+accessToken);
             mTextDetails.setText(ConstructWelcomeMessage(profile));
+            id=profile.getId();
+            profilePictureView.setProfileId(id);
+
         }
+
 
 
         @Override
@@ -49,9 +55,9 @@ public class MainFragment extends Fragment {
     };
 
     private String ConstructWelcomeMessage(Profile profile) {
-        StringBuffer stringBuffer=new StringBuffer();
+        StringBuilder stringBuffer= new StringBuilder();
         if(profile!=null){
-            stringBuffer.append("welcome: "+profile.getName());
+            stringBuffer.append("User Name: "+profile.getName());
         }
         return stringBuffer.toString();
     }
@@ -59,12 +65,8 @@ public class MainFragment extends Fragment {
     public MainFragment() {
     }
 
-
-
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mCallbackManager = CallbackManager.Factory.create();
         setupTockenTraacker();
         setupprofiletracker();
@@ -102,6 +104,7 @@ public class MainFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         setupTextDetails(view);
         setupLoginButton(view);
+       setupImage(view);
 
     }
 
@@ -128,6 +131,13 @@ public class MainFragment extends Fragment {
     private void setupTextDetails(View view) {
         mTextDetails = (TextView) view.findViewById(R.id.text_details);
     }
+
+    private void setupImage(View view){
+      profilePictureView =(ProfilePictureView) view.findViewById(R.id.userpic);
+
+    }
+
+
 
 
     @Override
