@@ -1,4 +1,4 @@
-package com.example.abhijeet.logintest;
+package com.example.abhijeet.logintest.Adapters;
 
 import android.graphics.Bitmap;
 import android.util.LruCache;
@@ -6,8 +6,7 @@ import android.util.LruCache;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-
-import java.security.PublicKey;
+import com.example.abhijeet.logintest.ConstructorsandInterfaces.MyApplication;
 
 /**
  * Created by abhij on 26-01-2016.

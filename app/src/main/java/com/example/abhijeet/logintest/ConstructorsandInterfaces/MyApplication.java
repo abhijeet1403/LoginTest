@@ -1,15 +1,9 @@
-package com.example.abhijeet.logintest;
+package com.example.abhijeet.logintest.ConstructorsandInterfaces;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
-import android.util.Base64;
-import android.util.Log;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import com.facebook.FacebookSdk;
 
 /**
  * Created by abhij on 24-01-2016.
@@ -17,11 +11,10 @@ import java.security.NoSuchAlgorithmException;
 public class MyApplication extends Application {
     public static MyApplication sInstance;
 
+
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-
-
     }
 
     public static MyApplication getsInstance() {

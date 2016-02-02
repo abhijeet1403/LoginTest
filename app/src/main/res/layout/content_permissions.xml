@@ -9,8 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.abhijeet.logintest.Photos"
-    tools:showIn="@layout/activity_photos">
-
+    tools:context="com.example.abhijeet.logintest.Permissions"
+    tools:showIn="@layout/activity_permissions">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="
+        Permissions used:
+        user_photos
+Provides access to photos a person has uploaded or been tagged in."
+        />
 
 </RelativeLayout>

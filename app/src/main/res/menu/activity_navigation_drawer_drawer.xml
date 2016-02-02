@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Contact :">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@android:drawable/ic_menu_send"
+                android:title="Email Me?" />
+
+        </menu>
+
+    </item>
+    <item
+        android:id="@+id/permission"
+        android:icon="@android:drawable/ic_menu_send"
+        android:title="Email Me?" />
+
+
+</menu>
