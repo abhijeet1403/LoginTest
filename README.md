@@ -1,6 +1,8 @@
 # LoginTest
 Facebook Login Testing
+
 ***IMPORTANT***
+
 Made for personal testing purposes
 
 
@@ -20,9 +22,15 @@ The navigation Drawer contains
 
 
 ***Issues Not Fixed***
+
 On Clicking on the pics the pics nothing happens this is because the development process had been abruptly stopped after creating the view pager and adding the viewager adapter.
 editing the view ppager adapter will inflate the imges.
 
 ***Libraries used***
+
 -Volley
 -Facbook Android API
+
+*DOWNLOAD*
+https://github.com/abhijeet1403/LoginTest/releases
+
